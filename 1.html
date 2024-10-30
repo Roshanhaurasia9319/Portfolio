@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Always Open Chatbot</title>
+    <style>
+        /* Make sure the chatbot occupies the full page */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-container"></div>
+    <script>
+        (function(d, t) {
+            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            v.onload = function() {
+                window.voiceflow.chat.load({
+                    verify: { projectID: '66d72cea10375210ca8333b7' },
+                    url: 'https://general-runtime.voiceflow.com',
+                    versionID: 'production',
+                    // Force the chat to open and disable the close button
+                    settings: {
+                        openOnLoad: true,
+                        disableMinimize: true, // Disables the ability to minimize the chat
+                        showCloseButton: false // Hides the close button
+                    }
+                });
+            }
+            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; 
+            v.type = "text/javascript"; 
+            s.parentNode.insertBefore(v, s);
+        })(document, 'script');
+    </script>
+</body>
+</html>

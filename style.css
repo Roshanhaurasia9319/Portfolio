@@ -1,4 +1,5 @@
 /* Color Scheme */
+
 :root {
     --primary-color: #007bff;
     --secondary-color: #343a40;
@@ -15,12 +16,18 @@
 .nav-link {
     color: var(--light-color) !important;
     font-weight: bold;
+    padding-left: 10px;
+}
+.navbar ul li:hover{
+    background-color: rgb(0, 255, 0);
+    border-radius: 20px;
+    
 }
 
 /* Section Styling */
 .section {
     padding: 60px 0;
-    opacity: 0;
+    /* opacity: 0; */
     transform: translateY(30px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
@@ -34,6 +41,7 @@
 .card {
     border: none;
     transition: transform 0.3s ease;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .card:hover {
@@ -43,14 +51,11 @@
 .btn-primary {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
-    transition: transform 0.3s ease, background-color 0.3s ease;
-   
 }
 
 .btn-primary:hover {
-    background-color: darken(var(--primary-color), 10%);
-    color: black;
-
+    background-color: #0056b3;
+    color: #000;
 }
 
 /* Footer Styling */
@@ -76,7 +81,7 @@ footer p {
     height: 250px;
 }
 
-/* Animations on Scroll */
+/* Animations */
 .fade-in {
     animation: fadeIn 1.5s ease forwards;
 }
@@ -107,17 +112,23 @@ footer p {
     }
 }
 
-/* Typing and Blink Animations */
+/* Typing Effect */
+.head {
+    font-family: monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: bold;
+    animation: typing 3.5s steps(30) infinite alternate-reverse, blink 1s infinite;
+}
+
 @keyframes typing {
     from {
         width: 0;
         color: rgb(0, 162, 255);
-        text-decoration: underline;
     }
     to {
         width: 100%;
         color: rgb(0, 255, 0);
-        text-decoration: underline;
     }
 }
 
@@ -127,50 +138,15 @@ footer p {
     }
 }
 
-/* Pop-up Animation */
-@keyframes popUp {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-3px);
-    }
-    100% {
-        transform: translateY(-2px);
-    }
-}
-
-/* List Item Styling with Pop-up Hover Effect */
-ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-ul li:hover {
-    animation: popUp 1.5s ease-in-out infinite;
-    text-transform: uppercase;
-}
-
-/* Headline Typing Animation */
-.head {
-    margin-top: 50px;
-    margin-left: 100px;
-    font-family: monospace;
-    white-space: nowrap;
-    overflow: hidden;
-    font-weight: bolder;
-    animation: typing 3.5s steps(30) infinite 1s alternate-reverse, blink 1s infinite;
-}
-
 /* Skill Button Styling */
 .skill-btn {
     background-color: rgb(0, 255, 0);
-    border-style: none;
+    border: none;
     color: white;
     border-radius: 50%;
-    height: 100px; /* Round shape ensured by equal height and width */
+    height: 100px;
     width: 100px;
-    font-size: 18px;
+    font-size: 13px;
     font-weight: 500;
     display: flex;
     justify-content: center;
@@ -181,11 +157,6 @@ ul li:hover {
 .skill-btn:hover {
     transform: scale(1.1);
     background-color: #00b7ff;
-}
-
-/* Skill Section Slide-up Animation */
-.skill .slide-up {
-    animation: slideUp 1s ease-out;
 }
 
 /* Responsive Button Layout */
